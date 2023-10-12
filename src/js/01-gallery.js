@@ -12,5 +12,5 @@ const selectors = {
 // console.log(galleryItems);
 
 selectors.gal.insertAdjacentHTML('afterbegin', galleryCreate(galleryItems));
-console.log(selectors.gal);
+// console.log(selectors.gal);
 new SimpleLightbox('.gallery a');

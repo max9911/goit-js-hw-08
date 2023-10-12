@@ -31,7 +31,8 @@ function submitF(evt) {
   if (emailForm.value && textForm.value) {
     const object = JSON.parse(localStorage.getItem('feedback-form-state'));
     console.log(object);
-
+    value.email = '';
+    value.text = '';
     emailForm.value = '';
     textForm.value = '';
 
