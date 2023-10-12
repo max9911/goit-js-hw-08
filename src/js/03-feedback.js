@@ -6,10 +6,10 @@ const submit = document.querySelector('button');
 
 const value = JSON.parse(localStorage.getItem('feedback-form-state')) ?? {
   email: '',
-  text: '',
+  message: '',
 };
 emailForm.value = value.email;
-textForm.value = value.text;
+textForm.value = value.message;
 
 emailForm.addEventListener('input', throttle(logEmail, 500));
 textForm.addEventListener('input', throttle(logText, 500));
@@ -22,7 +22,7 @@ function logEmail(event) {
 }
 
 function logText(event) {
-  value.text = event.target.value;
+  value.message = event.target.value;
   localStorage.setItem('feedback-form-state', JSON.stringify(value));
 }
 
@@ -32,12 +32,12 @@ function submitF(evt) {
     const object = JSON.parse(localStorage.getItem('feedback-form-state'));
     console.log(object);
     value.email = '';
-    value.text = '';
+    value.message = '';
     emailForm.value = '';
     textForm.value = '';
 
     localStorage.removeItem('feedback-form-state');
   } else {
-    return alert('!!!!nedd to fill all text areas!!!!');
+    return alert('!!!!need to fill all text areas!!!!');
   }
 }
